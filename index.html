@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body>
+                    <!-- BLOCK-->
+                    <div class="main_calc_container">
+                        <div class="label_block"><span>ПРОРАХУВАТИ ДРУК НА АКРИЛІ (ПОСТЕР НА АКРИЛІ)</span></div>
+                        <div class="elements_form">
+                                <div class="element_type1">
+                                    <input id="wVal" class="field1" type="text" placeholder="Розмір у мм" />
+                                    <div class="info_field"><span>ШИРИНА</span></div>
+                                </div>
+                                <div class="element_type1">
+                                    <input id="hVal" class="field1" type="text" placeholder="Розмір у мм" />
+                                    <div class="info_field"><span>ВИСОТА</span></div>
+                                </div>
+                                <div class="element_type2">
+                                    <input id="countVal" class="field2" type="text" placeholder="шт." />
+                                    <div class="info_field"><span>К-СТЬ</span></div>
+                                </div>
+                                <div class="element_type_btn" id="start"><button id="btn_1" type="submit"><span>ПОЧАТИ</span></button></div>
+                        </div>
+                    </div>
+                    <!--Block Result-->
+                    <div class="main_calc_container hiden" id="resultForm" style="margin-top: 20px;">
+                        <div class="label_block"><span>Ваша ціна</span></div>
+                        <div class="elements_form_result" >
+                                <div class="block_property" id="block_property">
+                                </div>
+                                <div class="block_property" id="block_price">
+                                    
+                                </div>
+                        </div>
+                    </div>
+                    <!--Block Result-->
+                    <!-- BLOCK-->
+                    <div class="main_calc_alert hiden" id="alertVal"><span class="info_field">Якщо більше 1250х2500мм, то потрібно робити стиковку, </br> дати можливість зробити коментар: як стикувати чи розділяти, чи наносити друк через плівку.</span></div>
+                    <div class="main_calc_container_new hiden" id="step1">
+                        <div class="label_block"><span>ОБЕРІТЬ МАТЕРІАЛ</span></div>
+                        <div class="block_radio1">
+                            <label class="info_field"><input name="origin" type="radio" value="Прозорий акрил">ПРОЗОРИЙ АКРИЛ</label>
+                            <label class="info_field"><input name="origin" type="radio" value="Молочний акрил">МОЛОЧНИЙ АКРИЛ</label>
+                        </div>
+                    </div>
+                    <!-- BLOCK-->
+                    <div class="main_calc_container_new hiden" id="step2">
+                        <div class="label_block"><span>ОБЕРІТЬ ТОВЩИНУ МАТЕРІАЛУ</span></div>
+                        <div class="block_radio1">
+                            <label class="info_field"><input name="thin" type="radio" value="2мм">2мм</label>
+                            <label class="info_field"><input name="thin" type="radio" value="3мм">3мм</label>
+                            <label class="info_field" id="optional1"><input name="thin" type="radio" value="4мм">4мм</label>
+                            
+                        </div>
+                    </div>
+                    <!-- BLOCK-->
+                    <div class="main_calc_container_card hiden" id="step3">
+                        <div class="label_block"><span>ОБЕРІТЬ ТИП ДРУКУ</span></div>
+                        <div class="block_radio2">
+                            <label class="info_field_card">
+                                <input class="card_input" name="print" type="radio" value="Повнокольоровий прямий друк 4+0" checked>
+                                <img src="img/img1.jpg" title="" >
+                                <span class="info_field">Повнокольоровий </br>прямий друк </br><strong>4+0</strong></span>
+                            </label>
+                            <label class="info_field_card">
+                                <input class="card_input" name="print" type="radio" value="Повнокольоровий прямий друк (x2 Насиченість) 2CMYK">
+                                <img src="img/img2.jpg" title="" >
+                                <span class="info_field">Повнокольоровий </br>прямий друк </br>(x2 Насиченість)</br><strong>2CMYK</strong></span>
+                            </label>
+                            <label class="info_field_card" id="optional1">
+                                <input class="card_input" name="print" type="radio" value="Повноколірний прямий друк з білим CMYK+W">
+                                <img src="img/img3.jpg" title="" >
+                                <span class="info_field">Повнокольоровий </br>прямий друк </br>(з білим)</br><strong>CMYK+W</strong></span>
+                            </label>
+                            <label class="info_field_card " id="optional2">
+                                <input class="card_input" name="print" type="radio" value="Друк на прозорій плівці та ламінація його на акрил 4+0">
+                                <img src="img/img4.jpg" title="" >
+                                <span class="info_field">Друк на прозорій </br>плівці та ламінація</br>його на акрил</br><strong>4+0</strong></span>
+                            </label>
+                            <label class="info_field_card " id="optional3">
+                                <input class="card_input" name="print" type="radio" value="Друк на прозорій плівці та ламінація його на акрил 2CMYK">
+                                <img src="img/img4.jpg" title="" >
+                                <span class="info_field">Друк на прозорій </br>плівці та ламінація</br>його на акрил</br><strong>2CMYK</strong></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="main_calc_container_new hiden" id="step4">
+                        <div class="label_block"><span>ВКАЖІТЬ СТОРОНУ ДРУКУ</span></div>
+                        <div class="block_radio1" id="center2">
+                            <label class="info_field" id="block1"><input name="printType" type="radio" value="Лицьова">Лицьова</label>
+                            <label class="info_field" id="block2"><input id="center" name="printType" type="radio" value="Внутрішня">Внутрішня (відзеркалений макет)</label>
+                        </div>
+                    </div>
+                    <div class="main_calc_container_new hiden" id="step5">
+                        <div class="label_block"><span>ФОРМА ВИРІЗАННЯ</span></div>
+                        <div class="block_radio1">
+                            <label class="info_field"><input name="cutType" type="radio" value="Прямокутна">Прямокутна</label>
+                            <label class="info_field"><input name="cutType" type="radio" value="Згідно вектору макету">Згідно вектору макету</label>
+                        </div>
+                    </div>
+                    <div class="main_calc_container_new hiden" id="step6">
+                        <div class="label_block"><span>ОТВОРИ</span></div>
+                        <div class="block_radio1">
+                            <label class="info_field"><input name="dot" type="radio" value="Без отворів">Без отворів</label>
+                            <label class="info_field"><input name="dot" type="radio" value="Отвори діаметром 6мм">Отвори діаметром 6мм</label>
+                            <label class="info_field"><input name="dot" type="radio" value="Отвори діаметром 8мм">Отвори діаметром 8мм</label>
+                        </div>
+                    </div>
+                    <div class="main_calc_container_new hiden" id="step7">
+                        <div class="label_block"><span>КІЛЬКІСТЬ ОТВОРІВ</span></div>
+                        <div class="block_radio1">
+                            <label class="info_field"><input name="dot_count" type="radio" value="По кутах">По кутах</label>
+                            <label class="info_field"><input name="dot_count" type="radio" value="З кроком 300мм">З кроком 300мм</label>
+                            <label class="info_field"><input name="dot_count" type="radio" value="З кроком 500мм">З кроком 500мм</label>
+                        </div>
+                    </div>
+                    <div class="main_btn hide" id="result"><button id="btn_1" type="submit"><span>РОЗРАХУВАТИ</span></button></div>
+        <script src="script.js"></script>
+        <style>
+            .main_calc_container {
+          box-sizing: border-box;
+          width: 860px;
+          height: 163px;
+          margin: 0 auto;
+          background: #FFFFFF;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 39px;
+        }
+        .label_block {
+          width: 100%;
+          height: 30px;
+          left: 506px;
+          top: 86px;
+          text-align: center;
+          margin: 0 auto;
+          padding-top: 10px;
+          font-family: 'Montserrat' !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 15px !important;
+          line-height: 18px !important;
+          text-transform: uppercase;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          color: #000000;
+        }
+        
+        .info_field {
+          font-family: 'Montserrat' !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 15px !important;
+          line-height: 18px !important;
+          text-align: center;
+          margin-top: 5px;
+        }
+        .element_type1{
+          display: block;
+          width: 230px;
+          margin-right: 4%;
+          margin-top: 20px;
+          float: left;
+        }
+        .elements_form{
+          width: 860px;
+          margin: 0 auto;
+          height: 100px;
+          padding-left: 35px;
+        }
+        .element_type2{
+          display: block;
+          width: 76px;
+          margin-right: 4%;
+          margin-top: 20px;
+          float: left;
+        }
+        /* Button ------------------------------------------- */
+        .element_type_btn {
+          display: block;
+          width: 150px;
+          margin-top: 20px;
+          float: left;
+        }
+        #btn_1{
+          width: 150px;
+          height: 49px;
+          left: 962px;
+          top: 141px;
+          float: left;
+          background: #353434;
+          border-radius: 8px;
+          color: #EAE9E9;
+          border: 0px;
+        }
+        #btn_1:hover{
+          background: #ed5252;
+          color: #000000;
+          transition-duration: 0.4s;
+          cursor:pointer ;
+        }
+        #btn_1:not(hover){
+          background: #353434;
+          color: #EAE9E9;
+          transition-duration: 0.4s;
+        }
+        /* Button ------------------------------------------- */
+        /* Поля ------------------------------------------- */
+        .field1{
+          width: 230px;
+          height: 49px;
+          left: 322px;
+          top: 141px;
+          border: 0px;
+          background: #EAE9E9;
+          border-radius: 8px !important;
+          font-family: 'Montserrat' !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 15px !important;
+          line-height: 18px !important;
+          padding-left: 10px;
+        }
+        .field2{
+          width: 76px;
+          height: 49px;
+          left: 322px;
+          top: 141px;
+          border: 0px;
+          background: #EAE9E9;
+          border-radius: 8px !important;
+          font-family: 'Montserrat' !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 15px !important;
+          line-height: 18px !important;
+          padding-left: 10px;
+        }
+        .field1:focus{
+          background: #fffefe;
+          transition-duration: 0.4s;
+        }
+        .field2:focus{
+          background: #fffefe;
+          transition-duration: 0.4s;
+        }
+        /* Поля ------------------------------------------- */
+        
+        .main_calc_alert{
+          box-sizing: border-box;
+          width: 860px;
+          height: 67px;
+          margin: 0 auto;
+          background: #f2c159;
+          border: 1px solid rgba(250, 163, 0, 0.1);
+          border-radius: 39px;
+          margin-top: 20px;
+          text-align: center;
+          justify-content: center;
+          padding-top: 14px;
+        }
+        .hiden{
+          display: none;
+          transition-duration: 0.4s;
+        }
+        /* Radio btn check ------------------------------------------- */
+        .main_calc_container_new{
+          box-sizing: border-box;
+          width: 860px;
+          height: 100px;
+          margin: 0 auto;
+          background: #FFFFFF;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 39px;
+          margin-top: 20px;
+        }
+        .block_radio1{
+          display: flex;
+          text-align: center;
+          padding-top: 12px;
+          
+        }
+        .block_radio1 > *{
+          flex: 1 100%;
+        }
+        .info_field_opt{
+          font-family: 'Montserrat' !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 15px !important;
+          line-height: 18px !important;
+          text-align: center;
+          margin-top: 5px;
+        }
+        /* Radio btn check ------------------------------------------- */
+        /* Card btn check ------------------------------------------- */
+        .main_calc_container_card{
+          box-sizing: border-box;
+          width: 860px;
+          height: 300px;
+          margin: 0 auto;
+          background: #FFFFFF;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 39px;
+          margin-top: 20px;
+        }
+        .info_field_card{
+          display: block;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          width:20%;
+          text-align: center;
+          height: 220px;
+          float: left;
+          margin-left: 10px;
+          margin-right: 10px;
+          border-radius: 12px;
+          cursor: pointer;
+        }
+        .block_radio2{
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          padding-top: 12px;
+        }
+        
+        .info_field_card_opt{
+          display: block;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          width:20%;
+          text-align: center;
+          height: 100px;
+          float: left;
+          margin-left: 10px;
+          margin-right: 10px;
+          border-radius: 12px;
+        }
+        .card_input{
+          
+        }
+        
+        /* Card btn check ------------------------------------------- */
+        .dont {
+          background: silver !important;
+          user-select: none !important;
+          cursor: no-drop !important;
+        }
+        /* result ------------------------------------------- */
+        .main_btn {
+          box-sizing: border-box;
+          width: 860px;
+          margin: 0 auto;
+          border-radius: 39px;
+          margin-top: 20px;
+          display: flex;
+        }
+        .main_btn > *{
+          flex: 1 100%;
+        }
+        .hide{
+          display: none;
+        }
+        .elements_form_result {
+          display: flex;
+          width: 860px;
+          height: 120px;
+          flex-direction: row;
+          font-family: 'Montserrat' !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          font-size: 11px !important;
+          line-height: 13px !important;
+          text-align: center;
+          justify-content: space-around;
+        }
+        .elements_form_result > * {
+          flex: 1 100%;
+        }
+        #block_property {
+          margin-top: 8px;
+          text-align: left;
+          padding-left: 40px;
+        }
+        #block_price {
+          font-size: 30px;
+          line-height: 30px;
+          padding-top: 20px;
+        }
+        .numberPrice {
+          color: red;
+        }
+        .numberPrice2{
+          font-size: 10px !important;
+          line-height: 12px !important;
+        }
+        /* result ------------------------------------------- */
+        /* Для скринов поменьше */
+        @media (max-width: 878px) {
+          .main_calc_container{
+            width: 90%;
+            height: 365px;
+          }
+          .info_field{
+            
+          }
+          .label_block{
+            font-size: 12px;
+          }
+          .elements_form{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            padding: 0px;
+            padding-top: 15px;
+          }
+          .elements_form > * {
+            flex: 1 100%;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 10px;
+          }
+          .element_type_btn{
+            width: 100%;
+          }
+          #btn_1{
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+          }
+          .field1{
+            width: 98%;
+          }
+          .field2{
+            width: 98%;
+          }
+          .element_type1{
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+          }
+          .element_type2{
+            width: 100%;
+          }
+          .main_btn{
+            width: 90%;
+          }
+          #resultForm{
+            height: 280px;
+          }
+          .elements_form_result{
+            width: 90%;
+            flex-direction: column;
+            margin: 0 auto;
+            margin-top: 50px;
+            height: 130px;
+          }
+          .elements_form_result > * {
+            flex: 1 100%;
+          }
+          .main_calc_container_new {
+            width: 90%;
+          }
+          .main_calc_container_card{
+            width: 90%;
+            flex-wrap: wrap;
+            height: 820px;
+          }
+          .block_radio2{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            width: 98%;
+          }
+          .block_radio2 > * {
+            width: 150px;
+            margin-bottom: 15px;
+            margin-left: 5px;
+            margin-right: 5px;
+          }
+          #block1 {
+            padding-top: 0px;
+          }
+          #block2 {
+        
+          }
+          #center{
+          }
+          #center2{
+        
+          }
+            .info_field_card{
+                height: 240px;
+            }
+            .label_block {
+                height: 45px;
+            }
+            }@media (max-width: 340px) {.main_calc_container_card{
+                width: 90%;
+                flex-wrap: wrap;
+                height: 1330px;
+                }.main_calc_container_new{height:150px;}}
+        </style>
+        
+    </body>
+</html>
